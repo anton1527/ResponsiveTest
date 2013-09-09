@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Responsive Design 3</title>
+	<link rel="stylesheet" href="css/patron4.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="js/jquery.mobilemenu.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".mobilemenu").mobileMenu({
+				combine:false,
+				switchWidth: 500,
+				groupPageText: "",
+				topOptionText: "",
+				prependTo: "#menu"
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="menu" class="nav">
+		<ul class="mobilemenu">
+			<li>
+				<a href="#1">Menu1</a>
+				<ul>
+					<li>
+						<a href="#1">Menu1</a>
+					</li>
+					<li>
+						<a href="#2">Menu2</a>
+					</li>
+					<li>
+						<a href="#3">Menu3</a>
+					</li>
+					<li>
+						<a href="#4">Menu4</a>
+					</li>
+					<li>
+						<a href="#5">Menu5</a>
+					</li>
+				</ul>	
+			</li>
+			<li>
+				<a href="#2">Menu2</a>
+			</li>
+			<li>
+				<a href="#3">Menu3</a>
+			</li>
+			<li>
+				<a href="#4">Menu4</a>
+			</li>
+			<li>
+				<a href="#5">Menu5</a>
+			</li>
+		</ul>	
+	</div>
+</body>
+</html>

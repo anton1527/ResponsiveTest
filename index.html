@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="es-PE">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<title>Modernizr</title>
+	<script src="js/modernizr.js" type="text/javascript"></script>
+	<script src="js/jquery-1.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+	<h1>Modernizr</h1>
+	<h2>Caracteristicas de tu navagador</h2>
+	<div id="lista"></div>
+	<h2>Soporte de inputs</h2>
+	<div id="inputs"></div>
+
+	<script type="text/javascript">
+		if (Modernizr.geolocation) {
+			$("#lista").append("geolocation : true <br/>");			
+		}
+		else{
+			$("#lista").append("geolocation : false <br/>");	
+		}	
+
+		if (Modernizr.video) {
+			$("#lista").append("video : true <br/>");			
+		}
+		else{
+			$("#lista").append("video : false <br/>");	
+		}	
+
+		if (Modernizr.fontface) {
+			$("#lista").append("fontface : true <br/>");			
+		}
+		else{
+			$("#lista").append("fontface : false <br/>");	
+		}	
+
+		$.each(Modernizr.inputtypes, function(input,value){
+			$("#inputs").append(input+" : "+value+"<br/>");
+		});
+
+	</script>
+
+</body>
+</html>

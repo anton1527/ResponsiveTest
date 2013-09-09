@@ -1,0 +1,50 @@
+*{margin:0;}
+body
+{
+	background: #C3E5F9;
+	color:white;
+	font-size:16px;
+	font-family:Arial;
+	text-shadow:1px 1px 0 black;
+}
+.section
+{
+	padding: 10px 0 ;
+	background:#12A89D;
+	margin: 10px auto;
+	width:1000px;
+	overflow:hidden;
+}
+
+.article
+{
+	float:left;
+	width:50%;
+}
+
+.fila1
+{
+	background: #830F2A;
+}
+
+.fila2
+{
+	background: #1C4583;
+}
+
+@media screen and (max-width: 1000px)
+{
+	.section
+	{
+		width:100%;
+	}
+}
+
+@media screen and (max-width: 700px)
+{
+	.article
+	{
+		width:100%;
+	}
+}
+

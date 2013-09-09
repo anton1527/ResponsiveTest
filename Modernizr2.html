@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Test Modernizr</title>
+	<script src="js/modernizr.js" type="text/javascript"></script>
+	<script src="js/jquery-1.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+	
+	<section id="contenido">
+		<div class="contenedor">
+			<h2>Formulario</h2>
+			<div id="formulario">
+				<label for="fecha">Fecha:</label>
+				<input type="date" name="fecha" id="fecha">
+				<p>Si tu navegador no soporta input date se cargara el plugin jquery datepicker de JqueryUI</p>
+			</div>
+			<h2>Soporte de tu navegador</h2>
+			<div class="soporte"></div>
+		</div>
+	</section>
+	<footer>
+		<div class="contenedor">
+			<h2>Pie de pagina</h2>
+		</div>
+	</footer>
+
+<script type="text/javascript">
+	var	display;
+	if (!Modernizr.inputtypes.date) {
+		display = "<h1 class='mensaje'>Tu navegador no soporta input date</h1>";
+		$.getScript("http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js",
+			function(){
+				var css = $("<link>");
+				css.attr({rel:"stylesheet",type:"text/css",
+				href:"http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/pepper-grinder/jquery-ui.min.css"});
+				$("head").append(css);
+				$("#fecha").datepicker();
+			});
+	}
+	else{
+		display="<h1 class='mensaje'>Tu navegador soporta input date</h1>";
+	}
+
+	$("#contenido").prepend($(display).fadeIn());
+	var slideUp = setTimeout(function(){
+		$(".mensaje").slideUp();
+	},1000);
+
+	$.each(Modernizr.inputtypes, function(input,value){
+		$(".soporte").append(input + " : "+ value + "<br/>");
+	});
+
+</script>
+
+</body>
+</html>
